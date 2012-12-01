@@ -1,0 +1,11 @@
+# common noise
+*.a
+*.tar.gz
+
+# OpenSSL
+OpenSSL/include
+
+# cURL
+cURL/bin
+cURL/include
+cURL/src
