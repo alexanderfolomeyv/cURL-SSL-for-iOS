@@ -69,7 +69,7 @@ LOG="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}.sdk/build-libcurl-${VERSION}.lo
 
 echo "Configure libcurl for ${PLATFORM} ${SDKVERSION} ${ARCH}"
 
-./configure -prefix=${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}.sdk -disable-shared -with-random=/dev/urandom --with-ssl > "${LOG}" 2>&1
+./configure -prefix=${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}.sdk -disable-shared -with-random=/dev/urandom --with-ssl=${OPENSSL} > "${LOG}" 2>&1
 
 echo "Make libcurl for ${PLATFORM} ${SDKVERSION} ${ARCH}"
 
@@ -95,7 +95,7 @@ LOG="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/build-libcurl-${VER
 
 echo "Configure libcurl for ${PLATFORM} ${SDKVERSION} ${ARCH}"
 
-./configure -prefix=${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk --host=${ARCH}-apple-darwin --disable-shared -with-random=/dev/urandom --with-ssl > "${LOG}" 2>&1
+./configure -prefix=${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk --host=${ARCH}-apple-darwin --disable-shared -with-random=/dev/urandom --with-ssl=${OPENSSL} > "${LOG}" 2>&1
 
 echo "Make libcurl for ${PLATFORM} ${SDKVERSION} ${ARCH}"
 
@@ -121,7 +121,7 @@ LOG="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/build-libcurl-${VER
 
 echo "Configure libcurl for ${PLATFORM} ${SDKVERSION} ${ARCH}"
 
-./configure -prefix=${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk --host=${ARCH}-apple-darwin --disable-shared -with-random=/dev/urandom --with-ssl > "${LOG}" 2>&1
+./configure -prefix=${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk --host=${ARCH}-apple-darwin --disable-shared -with-random=/dev/urandom --with-ssl=${OPENSSL} > "${LOG}" 2>&1
 
 echo "Make libcurl for ${PLATFORM} ${SDKVERSION} ${ARCH}"
 
@@ -143,6 +143,6 @@ mkdir -p ${CURRENTPATH}/include
 cp -R ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}.sdk/include/curl ${CURRENTPATH}/include/
 echo "Building all steps done."
 echo "Cleaning up..."
-rm -rf ${CURRENTPATH}/src
-rm -rf ${CURRENTPATH}/bin
+#rm -rf ${CURRENTPATH}/src
+#rm -rf ${CURRENTPATH}/bin
 echo "Done."
